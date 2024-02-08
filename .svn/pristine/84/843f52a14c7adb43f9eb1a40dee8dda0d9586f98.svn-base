@@ -1,0 +1,35 @@
+<?php
+error_reporting(E_ALL & !E_NOTICE);
+//error_reporting(E_ALL);
+//te
+
+/*----------- API Path --------------*/
+ //$api_url = 'http://localhost:44310/api/';
+//$api_url = 'http://localhost:4431/api/';
+//$api_url = 'http://localhost:55415/api/';
+  $api_url = 'http://192.168.100.28:8443/api/';
+// $api_url = 'http://192.168.100.28:44367/api/';
+// $Passkey = "9932t189-79a0-bf02-cb50-d0fwnv13h29ta";
+
+//config database direct
+
+
+// $this->dbcon = $conn;
+function escape_string($data)
+{
+        if (!isset($data) or empty($data)) return '';
+        if (is_numeric($data)) return $data;
+
+        $non_displayables = array(
+                '/%0[0-8bcef]/',            // url encoded 00-08, 11, 12, 14, 15
+                '/%1[0-9a-f]/',             // url encoded 16-31
+                '/[\x00-\x08]/',            // 00-08
+                '/\x0b/',                   // 11
+                '/\x0c/',                   // 12
+                '/[\x0e-\x1f]/'             // 14-31
+        );
+        foreach ($non_displayables as $regex)
+                $data = preg_replace($regex, '', $data);
+        		$data = str_replace("'", "''", $data);
+        return $data;
+}

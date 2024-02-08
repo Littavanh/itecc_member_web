@@ -1,0 +1,93 @@
+<?php
+
+session_start();
+
+
+
+$mn_dashboard = "";
+$mn_Mmain = "";
+$mn_Mmain1 = "";
+
+$mn_Record = "";
+$mn_Record1 = "";
+
+$mn_user = "";
+$mn_user1 = "";
+
+$mn_Report = "";
+$mn_Report1 = "";
+
+$mn_car = "";
+$mn_movingCar = "";
+$mn_cartype = "";
+$mn_driver = "";
+$mn_department = "";
+$mn_carbrand = "";
+
+$mn_chooseCar = "";
+$mn_recordcar = "";
+$mn_budget = "";
+$mn_fee = "";
+$mn_invoice = "";
+$mn_gas = "";
+$mn_repair = "";
+
+$mn_repairDone1 = "";
+
+$mn_rRecordCar = "";
+$mn_rRecordCarReg = "";
+$mn_rRecordCarAll = "";
+$mn_rRecordCarAll1 = "";
+$mn_rRepair = "";
+
+if ($_GET['d'] == 'index') {
+  $mn_dashboard = "active";
+} 
+?>
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="#" class="brand-link ml-2">
+
+    <span class="brand-text font-weight-light">Itecc Member</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <?php
+        $imagePath = "dist/img/users/userImage.png";
+        if (!file_exists($imagePath)) {
+          $imagePath = "dist/img/users/userImage.png";
+        }
+        ?>
+        <img src="<?= $imagePath ?>" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="index.php?d=index" class="d-block"><?= $_SESSION['firstName'] ?> <?= $_SESSION['lastName'] ?></a>
+      </div>
+      
+    </div>
+   
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="index.php?d=index" class="nav-link <?= $mn_dashboard ?>">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              ໜ້າຫຼັກ
+            </p>
+          </a>
+        </li>
+
+       
+      </ul>
+
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,148 @@
+<?php
+
+session_start();
+
+
+
+$mn_dashboard = "";
+$mn_Mmain = "";
+$mn_Mmain1 = "";
+
+$mn_allAccount = "";
+$mn_activeAccount = "";
+
+$mn_enabledisableAccount = "";
+
+$mn_topup = "";
+$mn_refund = "";
+// $mn_deviceType = "";
+
+$mn_report = "";
+$mn_report1 = "";
+$mn_topupReport = "";
+
+if ($_GET['d'] == 'index') {
+  $mn_dashboard = "active";
+} else if ($_GET['d'] == 'account/allAccount') {
+  $mn_Mmain = "menu-open";
+  $mn_Mmain1 = "active";
+  $mn_allAccount = "active";
+} else if ($_GET['d'] == 'account/activeAccount') {
+  $mn_Mmain = "menu-open";
+  $mn_Mmain1 = "active";
+  $mn_activeAccount = "active";
+} else if ($_GET['d'] == 'account/enabledisableAccount') {
+  $mn_Mmain = "menu-open";
+  $mn_Mmain1 = "active";
+  $mn_enabledisableAccount = "active";
+} else if ($_GET['d'] == 'topup/topup') {
+
+  $mn_topup = "active";
+} else if ($_GET['d'] == 'report/topup') {
+  $mn_report = "menu-open";
+  $mn_report1 = "active";
+  $mn_topupReport = "active";
+}
+
+?>
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="#" class="brand-link">
+    <img src="dist/logo/Member23.png" alt="Itecc Member" class="brand-image img-circle">
+    <span class="brand-text font-weight-light">Itecc Member System</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="info">
+        <a href="index.php?d=index" class="d-block">Login by: </a>
+      </div>
+      <div class="info">
+        <a href="index.php?d=index" class="d-block"><?= $_SESSION['im_fullName'] ?></a>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="index.php?d=index" class="nav-link <?= $mn_dashboard ?>">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview <?= $mn_Mmain ?>">
+          <a href="#" class="nav-link <?= $mn_Mmain1 ?>">
+            <i class="nav-icon fa fa-layer-group"></i>
+            <p>
+              Account
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="index.php?d=account/activeAccount" class="nav-link <?= $mn_activeAccount ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Active Account</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.php?d=account/allAccount" class="nav-link <?= $mn_allAccount ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>All Account</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.php?d=account/enabledisableAccount" class="nav-link <?= $mn_enabledisableAccount ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Enable & Disable Account</p>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </li>
+        <li class="nav-item">
+          <a href="index.php?d=topup/topup" class="nav-link <?= $mn_topup ?>">
+            <i class="fas fa-wallet nav-icon"></i>
+            <p>TopUp & Refund Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview <?= $mn_report ?>">
+          <a href="#" class="nav-link <?= $mn_report1 ?>">
+            <i class="nav-icon fa fa-layer-group"></i>
+            <p>
+              Report
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="index.php?d=report/topup" class="nav-link <?= $mn_topupReport ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>TopUp & Refund Report</p>
+              </a>
+            </li>
+           
+
+
+          </ul>
+
+        </li>
+      </ul>
+
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

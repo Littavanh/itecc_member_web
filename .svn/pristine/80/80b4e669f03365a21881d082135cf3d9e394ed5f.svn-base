@@ -1,0 +1,19 @@
+<?php
+session_start();
+
+unset($_SESSION['empid']);
+unset($_SESSION['userEmail']);
+unset($_SESSION['engname']);
+unset($_SESSION['laoname']);
+
+unset($_SESSION['titlename']);
+unset($_SESSION['langID']);
+
+unset($_SESSION['department']);
+unset($_SESSION['empstartdate']);
+unset($_SESSION['workingyear']);
+unset($_SESSION['grouplevel']);
+unset($_SESSION['company']);
+unset($_SESSION['emp_no']);
+
+header("Location: login.php");
