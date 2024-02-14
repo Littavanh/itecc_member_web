@@ -144,13 +144,13 @@ if ($_GET['d'] == 'index') {
   $mn_MstaffAccount = "menu-open";
   $mn_MstaffAccount1 = "active";
   $mn_enabledisableAccount = "active";
-} else if ($_GET['d'] == 'personal/activeAccount') {
+} else if ($_GET['d'] == 'accountPersonal/activeAccount') {
   $mn_Maccount = "menu-open";
   $mn_Maccount1 = "active";
   $mn_MpersonalAccount = "menu-open";
   $mn_MpersonalAccount1 = "active";
   $mn_pactiveAccount = "active";
-} else if ($_GET['d'] == 'personal/enabledisableAccount') {
+} else if ($_GET['d'] == 'accountPersonal/enabledisableAccount') {
   $mn_Maccount = "menu-open";
   $mn_Maccount1 = "active";
   $mn_MpersonalAccount = "menu-open";
@@ -168,13 +168,13 @@ if ($_GET['d'] == 'index') {
   $mn_MstaffWallet = "menu-open";
   $mn_MstaffWallet1 = "active";
   $mn_refund = "active";
-} else if ($_GET['d'] == 'wallet/ptopup') {
+} else if ($_GET['d'] == 'walletPersonal/topup') {
   $mn_MWallet = "menu-open";
   $mn_MWallet1 = "active";
   $mn_MpersonalWallet = "menu-open";
   $mn_MpersonalWallet1 = "active";
   $mn_ptopup = "active";
-} else if ($_GET['d'] == 'wallet/prefund') {
+} else if ($_GET['d'] == 'walletPersonal/refund') {
   $mn_MWallet = "menu-open";
   $mn_MWallet1 = "active";
   $mn_MpersonalWallet = "menu-open";
@@ -300,14 +300,14 @@ if ($_GET['d'] == 'index') {
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                  <a href="index.php?d=personal/enabledisableAccount" class="nav-link <?= $mn_penabledisableAccount ?>">
+                  <a href="index.php?d=accountPersonal/enabledisableAccount" class="nav-link <?= $mn_penabledisableAccount ?>">
                     <!-- <i class="far fa-circle nav-icon"></i> -->
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p>Enable & Disable Account</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="index.php?d=personal/activeAccount" class="nav-link <?= $mn_pactiveAccount ?>">
+                  <a href="index.php?d=accountPersonal/activeAccount" class="nav-link <?= $mn_pactiveAccount ?>">
                     <!-- <i class="far fa-circle nav-icon"></i> -->
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p>Active Account</p>
@@ -368,14 +368,14 @@ if ($_GET['d'] == 'index') {
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                  <a href="index.php?d=wallet/ptopup" class="nav-link <?= $mn_ptopup ?>">
+                  <a href="index.php?d=walletPersonal/topup" class="nav-link <?= $mn_ptopup ?>">
                     <!-- <i class="far fa-circle nav-icon"></i> -->
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p>Personal Top Up Wallet</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="index.php?d=wallet/prefund" class="nav-link <?= $mn_prefund ?>">
+                  <a href="index.php?d=walletPersonal/refund" class="nav-link <?= $mn_prefund ?>">
                     <!-- <i class="far fa-circle nav-icon"></i> -->
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p>Personal Refund Wallet</p>
