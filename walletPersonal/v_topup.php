@@ -50,14 +50,14 @@ $userName = $_SESSION['im_userName'];
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label  hidden>Amount</label>
-                                            <input type="number" placeholder="input amount:" Name="txtAmount" hidden
+                                            <label id="labelAmount"  hidden>Amount</label>
+                                            <input id="txtAmount" type="number" placeholder="input amount:" Name="txtAmount" hidden
                                                 class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <button type="submit" hidden name="btnTopUp" class="btn btn-primary">TopUp</button>
+                                    <button type="submit" id="btnTopUp" hidden name="btnTopUp" class="btn btn-primary">TopUp</button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <!-- <button type="submit" name="btnRefund" class="btn btn-warning">Refund</button> -->
                                 </div>
@@ -142,6 +142,9 @@ function checkOne(id) {
 
 function search(phone) {
     console.log(phone);
-    
+    document.getElementById("labelAmount").hidden=false;
+    document.getElementById("txtAmount").hidden=false;
+    document.getElementById("btnTopUp").hidden=false;
+
 }
 </script>
