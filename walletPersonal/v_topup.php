@@ -32,34 +32,71 @@ $userName = $_SESSION['im_userName'];
 
                 <!-- /.modal -->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="card-body">
                             <form method="post" action="?d=walletPersonal/topup" enctype="multipart/form-data">
-                            
+
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Input Mobile Phone to Topup</label>
-                                            <input type="number" placeholder="20XXXXXXXX" maxlength="10" Name="txtNumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            <input type="number" placeholder="20XXXXXXXX" maxlength="10"
+                                                Name="txtNumber" onkeyup="search(this.value)"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                 class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Amount</label>
-                                            <input type="number" placeholder="input amount:" Name="txtAmount"
+                                            <label  hidden>Amount</label>
+                                            <input type="number" placeholder="input amount:" Name="txtAmount" hidden
                                                 class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <button type="submit" name="btnTopUp" class="btn btn-primary">TopUp</button>
+                                    <button type="submit" hidden name="btnTopUp" class="btn btn-primary">TopUp</button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <!-- <button type="submit" name="btnRefund" class="btn btn-warning">Refund</button> -->
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                        <div class="col-md-12">
+                        <div class="card-body">
+                           
+                                <div class="table-responsive">
+                                    <table id="example2" class="table table-bordered beautified_report">
+
+                                        <thead>
+                                            <tr>
+                                               
+                                                <th>PersonalId</th>
+                                                <th>AccountName</th>
+                                                <th>mobileNumber</th>
+                                                <th>FullName</th>
+                                                <th>Date of birth</th>
+                                                <th style="text-align:center">Gender</th>
+                                                <th>Email</th>
+                                                <th>Address</th>
+                                                <th>personalWalet</th>
+                                                <th>personalWaletBL</th>
+                                             
+
+                                            </tr>
+                                        </thead>
+                                       
+                                    </table>
+                                  
+                                </div>
+                          
+                         
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -101,5 +138,10 @@ function checkOne(id) {
     // } else {
     //     document.getElementById("cbCheckAll" + id).value = 1;
     // }
+}
+
+function search(phone) {
+    console.log(phone);
+    
 }
 </script>
