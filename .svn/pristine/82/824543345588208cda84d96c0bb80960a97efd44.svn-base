@@ -94,15 +94,6 @@ $userName = $_SESSION['im_userName'];
                                     <input type="hidden" name="txtNumOfList" value="<?= $i ?>" id="txtNumOfList">
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <label>Month & Year</label>
-                                            <input type="month" name="txtMonth"  class="form-control" onchange="console.log(this.value)" required>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Amount</label>

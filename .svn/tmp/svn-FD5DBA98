@@ -2,21 +2,17 @@
 $tokenKey = $_SESSION['im_tokenKey'];
 $userName = $_SESSION['im_userName'];
 ?>
-<link type="text/css" rel="stylesheet" href="css/element.css" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/Action.js"></script>
-<script type="text/javascript" src="js/calculate.js"></script>
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Staff Refund Wallet</h1>
+                <h1>Staff Top Up Wallet</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="#">Wallet</a></li>
-                    <li class="breadcrumb-item active ">Staff Refund Wallet</li>
+                    <li class="breadcrumb-item active ">Staff Top Up Wallet</li>
 
                 </ol>
             </div>
@@ -37,9 +33,9 @@ $userName = $_SESSION['im_userName'];
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <form method="post" action="?d=wallet/refund" enctype="multipart/form-data">
+                            <form method="post" action="?d=wallet/topup" enctype="multipart/form-data">
                                 <div class="table-responsive">
-                                    <table id="example5" class="table table-bordered beautified_report">
+                                    <table id="example1" class="table table-bordered beautified_report">
 
                                         <thead>
                                             <tr>
@@ -54,9 +50,9 @@ $userName = $_SESSION['im_userName'];
                                                 <th>Email</th>
                                                 <th>Address</th>
                                                 <th>InfoComplete</th>
-                                                <!-- <th>Staff Wallet</th>
-                                                <th>Personal Wallet</th> -->
-                                                <th>Total Balance</th>
+                                                <th>Staff Wallet</th>
+                                                <th>Personal Wallet</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -81,9 +77,9 @@ $userName = $_SESSION['im_userName'];
                                                     <td><?= $data['emaillAddr'] ?></td>
                                                     <td><?= $data['provinceName'] ?> - <?= $data['districtName'] ?> - <?= $data['villageName'] ?></td>
                                                     <td><?= $data['infoComplete'] ?></td>
-                                                    <!-- <td><?= $data['staffWalet'] ?></td>
-                                                    <td><?= $data['personalWalet'] ?></td> -->
-                                                    <td align="right"><?=number_format($data['staffWaletBL']) ?></td>
+                                                    <td><?= $data['staffWalet'] ?></td>
+                                                    <td><?= $data['personalWalet'] ?></td>
+
 
                                                 </tr>
                                             <?php
@@ -106,14 +102,15 @@ $userName = $_SESSION['im_userName'];
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Amount</label>
-                                            <input type="input" style="text-align: right; " placeholder="input amount:" Name="txtAmount" class="form-control number" onkeyup="AddAndRemoveSeparator(this);" required>
+                                            <input type="input" placeholder="input amount:" Name="txtAmount" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <!-- <button type="submit" name="btnTopUp" class="btn btn-primary">TopUp</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                                    <button type="submit" name="btnRefund" class="btn btn-warning">Refund</button>
+                                    <button type="submit" name="btnTopUp" class="btn btn-primary">TopUp</button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!-- <button type="submit" name="btnRefund" class="btn btn-warning">Refund</button> -->
                                 </div>
                             </form>
                         </div>

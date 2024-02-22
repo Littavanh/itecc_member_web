@@ -48,14 +48,13 @@ $userName = $_SESSION['im_userName'];
                                             <th>Address</th>
                                             <th>InfoComplete</th>
                                             <th>Staff Wallet</th>
-                                            <th>Staff Wallet BL</th>
                                             <th>Personal Wallet</th>
-                                            <th>Personal Wallet BL</th>                                         
+                                         
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $arr = staffAccountActive($tokenKey, $userName, $api_url);
+                                        $arr = PersonalAccountActive($tokenKey, $userName, $api_url);
                                         $i = 1;
                                         foreach ($arr as $data) {
                                         ?>
@@ -71,9 +70,8 @@ $userName = $_SESSION['im_userName'];
                                                 <td><?= $data['provinceName'] ?> - <?= $data['districtName'] ?> - <?= $data['villageName'] ?></td>
                                                 <td><?= $data['infoComplete'] ?></td>
                                                 <td><?= $data['staffWalet'] ?></td>
-                                                <td align="right"><?= number_format($data['staffWaletBL']) ?></td>
                                                 <td><?= $data['personalWalet'] ?></td>
-                                                <td align="right"><?= number_format($data['personalWaletBL'])?></td>
+
                                              
                                             </tr>
                                         <?php

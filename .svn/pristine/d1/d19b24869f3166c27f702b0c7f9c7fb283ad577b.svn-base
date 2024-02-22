@@ -2,11 +2,11 @@
 $tokenKey = $_SESSION['im_tokenKey'];
 $userName = $_SESSION['im_userName'];
 
-function staffAccountActive($tokenKey, $userName, $api_url)
+function PersonalAccountActive($tokenKey, $userName, $api_url)
 {
     $message = '';
 
-    $urlRoute = $api_url . 'StaffWallet/staffAccountActive/';
+    $urlRoute = $api_url . 'PersonalWallet/PersonalAccountActive/';
 
     $jsonData = array(
         'userName' => $userName,
@@ -16,19 +16,17 @@ function staffAccountActive($tokenKey, $userName, $api_url)
     return $arr;
 }
 
-function topupStaffAmount($tokenKey, $userName, $amount, $walletAccount,$topupMonth,$topupYear, $api_url)
+function topupPersonalAmount($tokenKey, $userName, $amount, $walletAccount, $api_url)
 {
     $message = '';
 
-    $urlRoute = $api_url . 'StaffWallet/topupStaffAmount/';
+    $urlRoute = $api_url . 'PersonalWallet/topupPersonalAmount/';
 
     $jsonData = array(
         "tokenKey" => $tokenKey,
         "userName" => $userName,
         "amount" => $amount,
-        "walletAccount" => $walletAccount,
-        "topupMonth" => $topupMonth,
-        "topupYear" => $topupYear
+        "walletAccount" => $walletAccount
     );
 
     $ch = curl_init($urlRoute);
@@ -52,19 +50,19 @@ function topupStaffAmount($tokenKey, $userName, $amount, $walletAccount,$topupMo
     if ($arr['statusCode'] == "200") {
        
         $newPassKey = $arr['newTokenKey'];
-        $descript = "top up for staff";
+        $descript = "top up for Personal";
 
-        topupStaffWallet($newPassKey, $descript, $api_url);
+        topupPersonalWallet($newPassKey, $descript, $api_url);
     } else {
         $arr = null;
     }
     return $arr;
 }
-function refundStaffAmount($tokenKey, $userName, $amount, $walletAccount, $api_url)
+function refundPersonalAmount($tokenKey, $userName, $amount, $walletAccount, $api_url)
 {
     $message = '';
 
-    $urlRoute = $api_url . 'StaffWallet/topupStaffAmount/';
+    $urlRoute = $api_url . 'PersonalWallet/topupPersonalAmount/';
 
     $jsonData = array(
         "tokenKey" => $tokenKey,
@@ -96,17 +94,17 @@ function refundStaffAmount($tokenKey, $userName, $amount, $walletAccount, $api_u
         $newPassKey = $arr['newTokenKey'];
         $descript = "Refund for staff";
 
-        refundStaffWallet($newPassKey, $descript, $api_url);
+        refundPersonalWallet($newPassKey, $descript, $api_url);
     } else {
         $arr = null;
     }
     return $arr;
 }
-function topupStaffWallet($newPassKey, $descript, $api_url)
+function topupPersonalWallet($newPassKey, $descript, $api_url)
 {
     $message = '';
 
-    $urlRoute = $api_url . 'StaffWallet/topupStaffWallet/';
+    $urlRoute = $api_url . 'PersonalWallet/topupPersonalWallet/';
 
     $jsonData = array(
         "newPassKey" => $newPassKey,
@@ -115,11 +113,11 @@ function topupStaffWallet($newPassKey, $descript, $api_url)
     $arr = callAPI($jsonData, $urlRoute);
     return $arr;
 }
-function refundStaffWallet($newPassKey, $descript, $api_url)
+function refundPersonalWallet($newPassKey, $descript, $api_url)
 {
     $message = '';
 
-    $urlRoute = $api_url . 'StaffWallet/refundStaffWallet/';
+    $urlRoute = $api_url . 'PersonalWallet/refundPersonalWallet/';
 
     $jsonData = array(
         "newPassKey" => $newPassKey,

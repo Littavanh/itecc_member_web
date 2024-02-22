@@ -16,14 +16,10 @@ if (isset($_POST["btnTopUp"])) {
             $amount = str_replace(",","",escape_string(trim($_POST['txtAmount'])));
 
             
-        //  $year = substr($_POST['txtMonth'],0,4);
-        //  $month = substr($_POST['txtMonth'],5,7);
-        $year = date('Y', strtotime($_POST['txtMonth'])); 
-        $month =  date('m', strtotime($_POST['txtMonth'])); 
          
             if ($cbCheckOne != '') {
          
-                topupStaffAmount($tokenKey, $userName, $amount, $cbCheckOne,$month,$year, $api_url);
+                topupStaffAmount($tokenKey, $userName, $amount, $cbCheckOne, $api_url);
             }
         }
     }
