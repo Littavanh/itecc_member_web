@@ -123,8 +123,8 @@ $userName = $_SESSION['im_userName'];
                                             <td><?= $data['balance'] ?></td>
                                             <td><?= $data['totalBalance'] ?></td>
                                             <td><?= $data['descript'] ?></td>
-                                            <td align="center"><?= $data['strDate'] ?></td>
-                                            <td align="center"><?= $data['expDate'] ?></td>
+                                            <td ><?= $data['strDate'] ?></td>
+                                            <td ><?= $data['expDate'] ?></td>
 
                                         </tr>
                                         <?php
