@@ -43,7 +43,7 @@ $userName = $_SESSION['im_userName'];
                         <div class="card-body">
                             <form method="post" action="?d=wallet/topup" enctype="multipart/form-data">
                                 <div class="table-responsive">
-                                    <table id="example5" class="table table-bordered beautified_report">
+                                    <table id="example4" class="table table-bordered beautified_report">
 
                                         <thead>
                                             <tr>
