@@ -119,9 +119,9 @@ $userName = $_SESSION['im_userName'];
 
                                             <!-- <td align="center"><?= $i ?></td> -->
                                             <td><?= $data['transactionDate'] ?></td>
-                                            <td><?= $data['beforeBalance'] ?></td>
-                                            <td><?= $data['balance'] ?></td>
-                                            <td><?= $data['totalBalance'] ?></td>
+                                            <td><?= number_format($data['beforeBalance']) ?></td>
+                                            <td><?= number_format($data['balance']) ?></td>
+                                            <td><?= number_format($data['totalBalance']) ?></td>
                                             <td><?= $data['descript'] ?></td>
                                             <td ><?= $data['strDate'] ?></td>
                                             <td ><?= $data['expDate'] ?></td>
