@@ -2,10 +2,6 @@
 $tokenKey = $_SESSION['im_tokenKey'];
 $userName = $_SESSION['im_userName'];
 ?>
-<link type="text/css" rel="stylesheet" href="css/element.css" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/Action.js"></script>
-<script type="text/javascript" src="js/calculate.js"></script>
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -55,8 +51,8 @@ $userName = $_SESSION['im_userName'];
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label id="labelAmount" hidden>Amount</label>
-                                            <input id="txtAmount" type="input" placeholder="input amount:"
-                                                Name="txtAmount" hidden class="form-control number" onkeyup="AddAndRemoveSeparator(this);" required>
+                                            <input id="txtAmount" type="number" placeholder="input amount:"
+                                                Name="txtAmount" hidden class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
