@@ -50,7 +50,7 @@ function topupPersonalAmount($tokenKey, $userName, $amount, $walletAccount, $api
     if ($arr['statusCode'] == "200") {
        
         $newPassKey = $arr['newTokenKey'];
-        $descript = "top up for staff";
+        $descript = "top up for Personal";
 
         topupPersonalWallet($newPassKey, $descript, $api_url);
     } else {
