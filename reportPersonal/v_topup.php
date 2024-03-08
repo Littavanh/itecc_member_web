@@ -85,7 +85,7 @@
                                                 <tr>
 
                                                     <td><?= $i ?></td>
-                                                    <td><?= $data['personalId'] ?></td>
+                                                    <td><?= $data['staffId'] ?></td>
                                                     <td><?= $data['AccountName'] ?></td>
                                                     <td><?= $data['firstName'] ?> <?= $data['lastName'] ?></td>
                                                  

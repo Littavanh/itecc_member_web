@@ -112,7 +112,7 @@
                                             ?>
                                                 <tr>
                                                     <td><?= $i ?></td>
-                                                    <td><?= $data['PersonalId'] ?></td>
+                                                    <td><?= $data['staffId'] ?></td>
                                                     <td><?= $data['AccountName'] ?></td>
                                                     <td><?= $data['firstName'] ?> <?= $data['lastName'] ?></td>
                                                   
